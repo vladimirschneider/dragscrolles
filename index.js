@@ -1,7 +1,7 @@
 class Dragscrolles {
   constructor(element) {
     this.element = element;
-    this.scroller = this.element.parentElement;
+    this.listener = true;
 
     this.start = false;
     this.startMousePositionX = 0;
@@ -14,8 +14,8 @@ class Dragscrolles {
 
       this.startMousePositionX = e.screenX;
       this.startMousePositionY = e.screenY;
-      this.startScrollPositionX = this.scroller.scrollLeft;
-      this.startScrollPositionY = this.scroller.scrollTop;
+      this.startScrollPositionX = this.element.scrollLeft;
+      this.startScrollPositionY = this.element.scrollTop;
 
       this.start = true;
     });
@@ -35,12 +35,20 @@ class Dragscrolles {
       if (this.start) {
         e.preventDefault();
 
-        this.scroller.scrollTo(
+        this.element.scrollTo(
           this.startScrollPositionX + (this.startMousePositionX - e.screenX),
           this.startScrollPositionY + (this.startMousePositionY - e.screenY),
         );
       }
     });
+  }
+
+  enable() {
+    this.listener = true;
+  }
+
+  disable() {
+    this.listener = false;
   }
 }
 

@@ -13,5 +13,19 @@ $ npm install dragscrolles
 ```
 
 ```javascript
+import Dragscrolles from 'dragscrolles';
+
 new Dragscrolles([element]);
+```
+
+## Methods
+
+### Enable if disabled
+```javascript
+dragscrolles.enable()
+```
+
+### Disable
+```javascript
+dragscrolles.disable()
 ```
