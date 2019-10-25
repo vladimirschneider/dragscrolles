@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .scroll {
+      width: 100%;
+      max-width: 10em;
+      height: 15em;
+      overflow-y: auto;
+    }
+
+    .scroll--vertical {
+      max-width: 15em;
+      height: 10em;
+      overflow-x: auto;
+      overflow-y: none;
+    }
+
+    .scroll--both {
+      max-width: 10em;
+      height: 10em;
+      overflow-x: auto;
+      overflow-y: none;
+    }
+
+    .scroll__content {
+      width: 100%;
+      height: 60em;
+
+      background-image: linear-gradient(rgb(4, 207, 146), rgb(9, 107, 153));
+    }
+
+    .scroll__content--vertical {
+      width: 60em;
+      height: 100%;
+
+      background-image: linear-gradient(90deg, rgb(10, 228, 162), rgb(22, 111, 184));
+    }
+
+    .scroll__content--both {
+      width: 60em;
+      height: 60em;
+
+      background-image: linear-gradient(0deg, rgb(4, 207, 105), rgb(8, 95, 136));
+    }
+  </style>
+</head>
+<body>
+  <h1>Drag and drop scroll</h1>
+  <section>
+    <h2>Horizontal</h2>
+    <div class="scroll scroll--horizontal">
+      <div class="scroll__content"></div>
+    </div>
+  </section>
+  <section>
+    <h2>Vertical</h2>
+    <div class="scroll scroll--vertical">
+      <div class="scroll__content scroll__content--vertical"></div>
+    </div>
+  </section>
+  <section>
+    <h2>Both</h2>
+    <div class="scroll scroll--both">
+      <div class="scroll__content scroll__content--both"></div>
+    </div>
+  </section>
+  <script src="./index.js"></script>
+  <script>
+    const scrolls = document.querySelectorAll('.scroll__content');
+
+    scrolls.forEach((scroll) => {
+      new Dragscroll(scroll);
+    });
+  </script>
+</body>
+</html>
