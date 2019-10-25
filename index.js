@@ -32,7 +32,7 @@ class Dragscrolles {
     });
 
     this.element.addEventListener('mousemove', (e) => {
-      if (this.start) {
+      if (this.listener && this.start) {
         e.preventDefault();
 
         this.element.scrollTo(
