@@ -12,7 +12,9 @@
     "drag-n-drop",
     "drag-and-drop",
     "click-n-hold",
+    "click-n-scroll",
     "click-and-hold",
+    "click-and-scroll",
     "drag",
     "viewport"
   ],
@@ -20,6 +22,21 @@
     "type": "git",
     "url": "git://github.com/vladimirschneider/dragscrolles"
   },
-  "main": "index.js",
-  "license": "MIT"
+  "scripts": {
+    "start:prod": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.prod.babel.js",
+    "start:example": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.example.babel.js"
+  },
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-merge": "^4.2.2"
+  }
 }

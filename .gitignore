@@ -1,0 +1,7 @@
+/node_modules
+
+package-lock.json
+
+# System files
+.DS_store
+.idea

@@ -1,4 +1,6 @@
-class Dragscrolles {
+'use strict';
+
+export default class Dragscrolles {
   constructor(element) {
     this.element = element;
     this.listener = true;
@@ -51,5 +53,3 @@ class Dragscrolles {
     this.listener = false;
   }
 }
-
-export default Dragscrolles;
